@@ -1,9 +1,24 @@
 import type { NextPage } from 'next'
 
 import Head from 'next/head'
-import { Badge, Center, VStack } from '@chakra-ui/react'
+import { Badge, Center, HStack, VStack } from '@chakra-ui/react'
 
 const Home: NextPage = () => {
+  const Colors: string[] = [
+    'black',
+    'white',
+    'gray',
+    'red',
+    'orange',
+    'yellow',
+    'green',
+    'teal',
+    'blue',
+    'cyan',
+    'purple',
+    'pink',
+  ]
+
   return (
     <>
       <Head>
@@ -13,21 +28,39 @@ const Home: NextPage = () => {
       </Head>
 
       <Center minH="100vh">
-        <VStack maxW="container.md" mx="auto">
-          <Badge>Default</Badge>
-          <Badge colorScheme="green">Success</Badge>
-          <Badge colorScheme="red">Removed</Badge>
-          <Badge colorScheme="purple">New</Badge>
-          <Badge variant="outline" colorScheme="green">
-            Default
-          </Badge>
-          <Badge variant="solid" colorScheme="green">
-            Success
-          </Badge>
-          <Badge variant="subtle" colorScheme="green">
-            Removed
-          </Badge>
-        </VStack>
+        <HStack align="flex-start">
+          <VStack maxW="container.md" mx="auto">
+            <Badge>Default</Badge>
+          </VStack>
+          <VStack>
+            {Colors.map((color) => (
+              <Badge key={color} colorScheme={color}>
+                Colored
+              </Badge>
+            ))}
+          </VStack>
+          <VStack>
+            {Colors.map((color) => (
+              <Badge key={color} variant="outline" colorScheme={color}>
+                Outline Colored
+              </Badge>
+            ))}
+          </VStack>
+          <VStack>
+            {Colors.map((color) => (
+              <Badge key={color} variant="solid" colorScheme={color}>
+                Solid Colored
+              </Badge>
+            ))}
+          </VStack>
+          <VStack>
+            {Colors.map((color) => (
+              <Badge key={color} variant="subtle" colorScheme={color}>
+                Subtle Colored
+              </Badge>
+            ))}
+          </VStack>
+        </HStack>
       </Center>
     </>
   )
