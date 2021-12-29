@@ -5,8 +5,6 @@ import { Badge, Center, HStack, VStack } from '@chakra-ui/react'
 
 const Home: NextPage = () => {
   const Colors: string[] = [
-    'black',
-    'white',
     'gray',
     'red',
     'orange',
