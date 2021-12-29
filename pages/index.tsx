@@ -1,5 +1,7 @@
 import type { NextPage } from 'next'
+
 import Head from 'next/head'
+import { Badge, Center, VStack } from '@chakra-ui/react'
 
 const Home: NextPage = () => {
   return (
@@ -10,8 +12,23 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
-      
+      <Center minH="100vh">
+        <VStack maxW="container.md" mx="auto">
+          <Badge>Default</Badge>
+          <Badge colorScheme="green">Success</Badge>
+          <Badge colorScheme="red">Removed</Badge>
+          <Badge colorScheme="purple">New</Badge>
+          <Badge variant="outline" colorScheme="green">
+            Default
+          </Badge>
+          <Badge variant="solid" colorScheme="green">
+            Success
+          </Badge>
+          <Badge variant="subtle" colorScheme="green">
+            Removed
+          </Badge>
+        </VStack>
+      </Center>
     </>
   )
 }
